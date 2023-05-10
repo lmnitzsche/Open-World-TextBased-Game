@@ -1,0 +1,8 @@
+//Change Directory
+cd ~/Documents/OpenWorldTextBasedGame/Game
+
+//Build Code
+g++ -o play main.cpp endGame.cpp masadoraLocations.cpp playerTraveling.cpp
+
+//Run Code
+./play
