@@ -16,11 +16,166 @@ void MasadoraLocations::kingdomFacilityMasadora(string name, int& yen, bool king
     {
         MasadoraLocations* instance = nullptr;
         int kingdomFacilityAnswer;
+        int judicialChoice;
 
         if(kingStatus == true)
         {
             cout << endl << "\033[34m" << "Duke of Masadora: " << "\033[0m"
                  << "Welcome to the Supreme Office of Masadora Your Magesty." << endl;
+            sleep(3);
+            cout << "What would you like to do Your Magesty?" << endl;
+            sleep(3);
+            cout << endl << "1.) Impose a new tax on the residents of Masadora" << endl
+                 << "2.) Act as a judge on a case" << endl
+                 << "3.) Leave the Supreme Office of Masadora" << endl;
+            cin >> kingdomFacilityAnswer;
+
+            if(kingdomFacilityAnswer == 1)
+            {
+                cout << endl << "\033[33m" << "Book: " << "\033[0m" 
+                     << "You imposed a tax on the people of Masadora netting " << "\u00A5" << "5,000,000";
+                sleep(3);
+                yen = yen + 5000000;
+                cout << endl << "You now have " << "\u00A5" << yen;
+                sleep(3);
+                cout << endl << endl << "\033[34m" << "Duke of Masadora: " << "\033[0m"
+                     << "Harsh decision Your Majesty!" << endl;
+                sleep(4);
+                cout << "Nevertheless, it was an honor to have you in the Supreme Office of Masadora Your Majesty!" << endl;
+                sleep(4);
+                instance->townOfMasadora(name, yen, kingStatus,hasPlayedDeathDarts);
+            }
+            else if(kingdomFacilityAnswer == 2)
+            {
+                int caseNumber = rand() % 6 + 1;
+
+                if(caseNumber == 1)
+                {
+                    cout << endl << "\033[33m" << "Book: " << "\033[0m" 
+                         << "This woman stands accused of stealing a valuable piece of jewelry from the castle." << endl;
+                    sleep(3);
+                    cout << "The defendant claims that she did not commit the crime and that she was simply in the wrong place at the wrong time." << endl;
+                    sleep(3); 
+                    cout << "The prosecution presents several pieces of evidence linking the defendant to the crime, but the defense argues that there is not enough proof to convict." << endl;
+                    sleep(3);
+                }
+                else if(caseNumber == 2)
+                {
+                    cout << endl << "\033[33m" << "Book: " << "\033[0m" 
+                         << "This man stands accused of murdering your associate after a disagreement about finances." << endl;
+                    sleep(3);
+                    cout << "The prosecution presents forensic evidence and eyewitness testimony." << endl;
+                    sleep(3); 
+                    cout << "The defense argues that the defendant had no motive to commit the crime and that there is not enough evidence to prove guilt beyond a reasonable doubt." << endl;
+                    sleep(3);
+                }
+                else if(caseNumber == 3)
+                {
+                    cout << endl << "\033[33m" << "Book: " << "\033[0m" 
+                         << "This man stands accused of assaulting a royal guard." << endl;
+                    sleep(3);
+                    cout << " The prosecution presents video evidence showing the defendant striking the guard. " << endl;
+                    sleep(3); 
+                    cout << "The defense argues that the defendant was acting in self-defense and that the guard used excessive force." << endl;
+                    sleep(3);
+                }
+                else if(caseNumber == 4)
+                {
+                    cout << endl << "\033[33m" << "Book: " << "\033[0m" 
+                         << "This man stands accused of stealing a valuable horse from the stables in Pandora." << endl;
+                    sleep(3);
+                    cout << "The prosecution presents evidence of eyewitness testimony and stolen property found in the defendant's possession." << endl;
+                    sleep(3); 
+                    cout << "The defense argues that he was just borrowing the horse." << endl;
+                    sleep(3);
+                }
+                else if(caseNumber == 5)
+                {
+                    cout << endl << "\033[33m" << "Book: " << "\033[0m" 
+                         << "This woman has been accused of plotting a coup d'etat." << endl;
+                    sleep(3);
+                    cout << "The prosecution presents multiple testimonies proving guilt. " << endl;
+                    sleep(3); 
+                    cout << "The defense argues that that there is not enough evidence to prove guilt beyond a reasonable doubt." << endl;
+                    sleep(3);
+                }
+                else
+                {
+                    cout << endl << "\033[33m" << "Book: " << "\033[0m" 
+                         << "This man has been accused of forcing a shop keeper to use risky dice making the shop keeper go bankrupt." << endl;
+                    sleep(3);
+                    cout << "The prosecution presents evidence of testimony along with bank statements from the shop keeper." << endl;
+                    sleep(3); 
+                    cout << "The defense argues that if defendent was capable of this crime, he would have been capable of killing the shop keeper." << endl;
+                    sleep(3);
+                }
+
+                cout << endl << "\033[34m" << "Duke of Masadora: " << "\033[0m"
+                         << "What is your ruling Your Magesty?";
+                    sleep(3);
+                    cout << endl << endl << "1.) Imprison the defendent"
+                         << endl << "2.) Execute the defendent"
+                         << endl << "3.) Sentence the defendent to hard labor"
+                         << endl << "4.) Make a backdoor door with the defendent"
+                         << endl << "5.) Rule the defendent not guilty" << endl;
+                    sleep(4);
+                    cin >> judicialChoice;
+
+                    if(judicialChoice == 1)
+                    {
+                        cout << "\033[33m" << "Book: " << "\033[0m" 
+                             << "The defendent will be imprisoned immediately." << endl;
+                        sleep(3);
+                        cout << "What a loser." << endl;
+                        sleep(4);
+                        instance->townOfMasadora(name, yen, kingStatus,hasPlayedDeathDarts);
+                    }
+                    else if(judicialChoice == 2)
+                    {
+                        cout << "\033[33m" << "Book: " << "\033[0m" 
+                             << "The defendent will be executed by firing squad." << endl;
+                        sleep(3);
+                        cout << "He won't be a problem anymore boss." << endl;
+                        sleep(4);
+                        instance->townOfMasadora(name, yen, kingStatus,hasPlayedDeathDarts);
+                    }
+                    else if(judicialChoice == 3)
+                    {
+                        cout << "\033[33m" << "Book: " << "\033[0m" 
+                             << "The defendent will be sentence to hard labor." << endl;
+                        sleep(3);
+                        cout << "That will show them boss!" << endl;
+                        sleep(4);
+                        instance->townOfMasadora(name, yen, kingStatus,hasPlayedDeathDarts);
+                    }
+                    else if(judicialChoice == 4)
+                    {
+                        cout << "\033[33m" << "Book: " << "\033[0m" 
+                             << "The defendent agreed to sign a debt contract in exchange for his innocence." << endl;
+                        sleep(3);
+                        yen = yen + 1250000;
+                        cout << "The defendent paid you " << "\u00A5" << "1,250,000" << endl;
+                        sleep(4);
+                        cout << "You now have " << "\u00A5" << yen << endl;
+                        sleep(4);
+                        instance->townOfMasadora(name, yen, kingStatus,hasPlayedDeathDarts);
+                    }
+                    else
+                    {
+                        cout << "\033[33m" << "Book: " << "\033[0m" 
+                             << "The defendent is not guilty and will be freed!" << endl;
+                        sleep(3);
+                        instance->townOfMasadora(name, yen, kingStatus,hasPlayedDeathDarts);
+                    }
+            }
+            else
+            {
+                cout << endl << "\033[34m" << "Duke of Masadora: " << "\033[0m"
+                     << "Goodbye, Your Magesty!" << endl;
+                sleep(4);
+                instance->townOfMasadora(name, yen, kingStatus,hasPlayedDeathDarts);
+            }
+
         }
         else
         {
