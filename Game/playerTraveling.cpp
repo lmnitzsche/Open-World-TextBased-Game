@@ -3,6 +3,7 @@
     #include <unistd.h>
     
     #include "masadoraLocations.h"
+    #include "norkLocations.h"
     #include "endGame.h"
     #include "playerTraveling.h"
 
@@ -11,7 +12,8 @@
     void PlayerTraveling::travel(string name, int& yen, bool kingStatus, bool& hasPlayedDeathDarts)
     {
         PlayerTraveling* player = nullptr;
-        MasadoraLocations* instance = nullptr;
+        MasadoraLocations* instanceMasadora = nullptr;
+        NorkLocations* instanceNork = nullptr;
         string direction;
 
         cout << "\033[33m" << "Book: " "\033[0m"
@@ -25,7 +27,7 @@
             cout << endl << endl << "\033[33m" << "Book: " "\033[0m"
                  << "Welcome to the city of Masadora " << name << "!" << endl;
             sleep(3);
-            instance->townOfMasadora(name, yen, kingStatus, hasPlayedDeathDarts);
+            instanceMasadora->townOfMasadora(name, yen, kingStatus, hasPlayedDeathDarts);
         }
         else if(direction == "ne" || direction == "NE" || direction == "Ne" || direction =="nE" || direction == "north east" || direction == "North East")
         {
@@ -59,6 +61,11 @@
         else if(direction == "se" || direction == "SE" || direction == "Se" || direction =="sE" || direction == "south east" || direction == "South East")
         {
             cout << "Traveling south east to the city of Nork"; //Library, Theatre, Schrutte Paper Co., Kingdom Facility, KING(Strip Club or School)
+            sleep(3);
+            cout << endl << endl << "\033[33m" << "Book: " "\033[0m"
+                 << "Welcome to the city of Nork " << name << "!" << endl;
+            sleep(3);
+            instanceNork->townOfNork(name, yen, kingStatus, hasPlayedDeathDarts);
         }
         else if(direction == "e" || direction == "E" || direction == "east" || direction == "East")
         {
